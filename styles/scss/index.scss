@@ -1,11 +1,15 @@
 // @mixin set-grid-area()
 
+$primary-color: rgb(60, 169, 169);
+$color_grey: rgb(189, 189, 189);
+
+
 * {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: rgb(60, 169, 169);
+    color: $primary-color;
 }
 
 nav {
@@ -21,7 +25,7 @@ nav {
         li {
             list-style: none;
             padding: 0.3rem;
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            // font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             margin-left: 10px;
         }
     }
@@ -31,8 +35,10 @@ nav {
     width: 100%;
     height: 25vh;
     background-image: url("../../asset/d00e7a1d4bc84f4a58d6db7584ba4991.0000000.jpg");
-    // background-size: cover;
-    object-fit: contain;
+    background-size: cover;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     // background-color: bisque;
     display: flex;
     justify-content: center;
@@ -40,31 +46,48 @@ nav {
 
     .header-search-container {
         display: flex;
-        height: 20%;
+        align-items: center;
+        justify-content: center;
+        height: 25%;
         border-radius: 100%;
+        width: 20%;
 
         input {
             padding: 6px 10px 6px 10px;
+            width: 100%;
         }
-    }
 
-    .header-search-container-search-icon {
-        padding: 5px;
-        margin-left: 2px;
-        border: 2px solid black;
+        .header-search-container-search-icon {
+            padding: 15px;
+            margin-left: 2px;
+            border: 0.5px solid black;
+            height: 25%;
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $primary-color;
+        }
     }
 }
 
-h4 {
-    // color: rgb(71, 90, 212);
-    font-style: oblique;
-    font-size: larger;
+.mid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-top: 25px;
-    padding-left: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    h4 {
+        // color: rgb(71, 90, 212);
+        // font-style: oblique;
+        font-size: larger;
+    }
 }
 
 .grid-container {
-    padding-top: 10px;
+    padding: 10px 20px 10px 20px;
     display: grid;
     grid-template-areas:
         "header header header header"
@@ -164,6 +187,8 @@ h4 {
 
     button {
         padding: 6px 10px 6px 10px;
+        background-color: $primary-color;
+        color: white;
     }
 
     .button-use-block {
@@ -175,11 +200,84 @@ h4 {
             border: 2px solid black;
             margin: 2px 2px 2px 2px;
             width: 50px;
-            background-color: aqua;
+            background-color: $primary-color;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: white;
         }
 
+        .button-use-block-c {
+            border: 2px solid black;
+            margin: 2px 2px 2px 2px;
+            width: 50px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $color_grey;
+        }
+
+    }
+}
+
+footer {
+    background-color: $color_grey;
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .low {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // padding: 0px 30px 30px 30px;
+
+        .low-left {
+            // padding: 5px 5px 5px 5px;
+            width: 25%;
+            margin-right: 30px;
+
+            h3 {
+                padding: 20px 0px 25px 0px;
+            }
+        }
+
+
+
+        .low-right {
+            padding: 0px 5px 5px 5px;
+
+            display: flex;
+            justify-content: space-between;
+
+            // align-items: center;
+            .low-right-mid {
+                margin: 15px 30px 15px 15px;
+
+                h3 {
+                    padding: 40px 0px 25px 0px;
+                }
+            }
+
+            .low-right-emoticons {
+                // padding: 2px 2px 2px 2px;
+                display: flex;
+                // align-items: center;
+
+                .low-right-emoticons-r {
+                    display: flex;
+                    // justify-content: center;
+                    // align-items: center;
+                    border: 1px solid black;
+                    background-color: white;
+                    padding: 0px 2px 2px 2px;
+                    margin-bottom: 25px;
+                    margin-right: 10px;
+                    margin-top: 50px;
+                }
+            }
+        }
     }
 }
