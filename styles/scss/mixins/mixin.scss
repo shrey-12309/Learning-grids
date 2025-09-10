@@ -1,0 +1,7 @@
+@mixin set-grid-area($classname) {
+    grid-area: $classname;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}

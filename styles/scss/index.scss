@@ -1,7 +1,5 @@
-// @mixin set-grid-area()
-
-$primary-color: rgb(60, 169, 169);
-$color_grey: rgb(189, 189, 189);
+@use "./mixins/mixin.scss" as m;
+@use "./variables/variables.scss" as v;
 
 
 * {
@@ -9,7 +7,7 @@ $color_grey: rgb(189, 189, 189);
     margin: 0px;
     padding: 0px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: $primary-color;
+    color: v.$primary-color;
 }
 
 nav {
@@ -66,7 +64,7 @@ nav {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: $primary-color;
+            background-color: v.$primary-color;
         }
     }
 }
@@ -98,82 +96,83 @@ nav {
 
     .grid-container-header {
         height: fit-content;
-        grid-area: header;
+        // grid-area: header;
+        @include m.set-grid-area(header);
         background-color: rgb(94, 89, 89);
-        text-align: center;
+        // text-align: center;
         padding: 5px;
         height: 5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
     }
 
     .grid-container-left {
-        grid-area: nav;
+        @include m.set-grid-area(nav);
         border: 1px solid yellow;
         background-color: yellow;
-        text-align: center;
+        // text-align: center;
         height: 30rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
     }
 
     .grid-container-upper-first {
-        grid-area: upper-content-left;
+        @include m.set-grid-area(upper-content-left);
         border: 1px solid black;
         background-color: pink;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
     }
 
     .grid-container-upper-mid {
-        grid-area: upper-content-center;
+        @include m.set-grid-area(upper-content-center);
         border: 1px solid blue;
         background-color: palevioletred;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
     }
 
     .grid-container-upper-last {
-        grid-area: upper-content-right;
+        @include m.set-grid-area(upper-content-right);
         border: 1px solid pink;
         background-color: rosybrown;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
     }
 
     .grid-container-mid {
-        grid-area: middle-content;
-        text-align: center;
+        @include m.set-grid-area(middle-content);
+        // text-align: center;
         border: 2px solid green;
         background-color: greenyellow;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
     }
 
     .grid-container-low2 {
-        grid-area: lower-content;
-        text-align: center;
+        @include m.set-grid-area(lower-content);
+        // text-align: center;
         border: 1px solid blue;
         background-color: aquamarine;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
     }
 
     .grid-container-low {
-        grid-area: sticky-footer;
-        text-align: center;
+        @include m.set-grid-area(sticky-footer);
+        // text-align: center;
         border: 1px solid red;
         background-color: plum;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
         height: 4rem;
     }
 }
@@ -185,7 +184,7 @@ nav {
 
     button {
         padding: 6px 10px 6px 10px;
-        background-color: $primary-color;
+        background-color: v.$primary-color;
         color: white;
     }
 
@@ -198,7 +197,7 @@ nav {
             border: 2px solid black;
             margin: 2px 2px 2px 2px;
             width: 50px;
-            background-color: $primary-color;
+            background-color: v.$primary-color;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -213,14 +212,14 @@ nav {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: $color_grey;
+            background-color: v.$color_grey;
         }
 
     }
 }
 
 footer {
-    background-color: $color_grey;
+    background-color: v.$color_grey;
     height: 30vh;
     width: 100%;
     display: flex;
@@ -230,10 +229,8 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
-        // padding: 0px 30px 30px 30px;
 
         .low-left {
-            // padding: 5px 5px 5px 5px;
             width: 25%;
             margin-right: 30px;
 
@@ -250,7 +247,6 @@ footer {
             display: flex;
             justify-content: space-between;
 
-            // align-items: center;
             .low-right-mid {
                 margin: 15px 30px 15px 15px;
 
@@ -260,14 +256,10 @@ footer {
             }
 
             .low-right-emoticons {
-                // padding: 2px 2px 2px 2px;
                 display: flex;
-                // align-items: center;
 
                 .low-right-emoticons-r {
                     display: flex;
-                    // justify-content: center;
-                    // align-items: center;
                     border: 1px solid black;
                     background-color: white;
                     padding: 0px 2px 2px 2px;
